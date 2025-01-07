@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     public void RestoreHealth(float amount)
     {
         currentHealth += amount;
-        currentHealth = Mathf.Clamp(-currentHealth, 0,maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0,maxHealth);
         UpdateHeathBar();
     }
 }
