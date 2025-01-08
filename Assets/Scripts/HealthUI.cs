@@ -11,10 +11,10 @@ public class HealthUI : MonoBehaviour
     {
         if(healthScript == null)
         {
-            GameObject spawnPrefab = GameObject.FindWithTag(prefabTag);
-            if(spawnPrefab != null)
+            GameObject spawnedPrefab = GameObject.FindWithTag(prefabTag);
+            if(spawnedPrefab != null)
             {
-                healthScript = spawnPrefab.GetComponent<Health>();
+                healthScript = spawnedPrefab.GetComponent<Health>();
             }
         }
     }
