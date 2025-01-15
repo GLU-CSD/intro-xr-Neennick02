@@ -22,11 +22,11 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBase"))
-        {
-            baseHealth = null;
-            //verwijderd de reference als vijand base verlaat
-        }
+        //if (collision.gameObject.CompareTag("PlayerBase"))
+        //{
+        //    baseHealth = null;
+        //    //verwijderd de reference als vijand base verlaat
+        //}
     }
 
     private void Update()

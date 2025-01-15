@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-      if(playerTransform != null && agent != null)
+      if(playerTransform != null)
         {
             agent.SetDestination(playerTransform.position);
         }  
