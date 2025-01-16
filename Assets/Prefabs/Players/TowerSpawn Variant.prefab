@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387907193813652666, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5387907193814075546, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,7 @@ TagManager:
   - Base
   - Terrain
   - PlayerBase
+  - Spawner
   layers:
   - Default
   - TransparentFX

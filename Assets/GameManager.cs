@@ -1,18 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool gameActive = true;
+    private int score = 0;
+    private float scoreTimer = 0f;
+
+    //UI om de score weer te geven
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    //UI voor game over
+    [SerializeField] private GameObject gameOverUI;
+
+    private void Start()
     {
-        
+        scoreText.text = "Score: " + score;
+    }
+    private void Update()
+    {
+        scoreTimer += Time.deltaTime;
+
+        if(scoreTimer >= 1f) //verhoogt elke seconde de score
+        {
+            score++;
+            scoreTimer = 0f;
+        }
+        scoreText.text = "Score: " + score;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-        
+        gameActive = false;
+
+        //zoekt alle enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //vernietigt alle enemies
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        //vernietig spawners
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawners)
+        {
+            Destroy(spawner);
+        }
+
+        //Toon Game over screen
+        gameOverUI.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
