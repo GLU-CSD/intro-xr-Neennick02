@@ -14,6 +14,7 @@ public class ExplodeOnImpact : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")) //zoekt naar object met tag "enemy"
         {
             Explode();
+            //particle effect
             Destroy(gameObject);
         }
     }

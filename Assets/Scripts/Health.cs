@@ -16,18 +16,6 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHeathBar();
-
-        /*
-        GameObject obj1 = GameObject.Find("TakeDamage"); //koppelt damage button aan enemy prefab
-        buttonDamage = obj1.GetComponent<Button>();
-
-        buttonDamage.onClick.AddListener(() => TakeDamage(10));
-
-        GameObject obj2 = GameObject.Find("RestoreHealth");//koppelt heal button aan enemy prefab
-        buttonHeal = obj2.GetComponent<Button>();
-
-        buttonHeal.onClick.AddListener(() => RestoreHealth(10));
-        */
     }
 
     void UpdateHeathBar()
