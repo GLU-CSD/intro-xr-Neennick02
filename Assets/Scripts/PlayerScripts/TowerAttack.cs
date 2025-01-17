@@ -81,9 +81,12 @@ public class TowerAttack : MonoBehaviour
 
     private void DestroyTower()
     {
-        if(towerHealth.currentHealth <= 0)
+        if(towerHealth != null)
         {
-            Destroy(gameObject);
+            if (towerHealth.currentHealth < 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

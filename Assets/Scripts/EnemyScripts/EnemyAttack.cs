@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBase"))
+        if (collision.gameObject.CompareTag("PlayerBase") || collision.gameObject.CompareTag("PlayerTower"))
         {
             baseHealth = collision.gameObject.GetComponent<Health>();
         }
