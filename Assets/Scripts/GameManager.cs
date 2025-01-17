@@ -18,8 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
 
-    [SerializeField] private GameObject player;
-    [SerializeField] private BoxCollider bounds;
+    [SerializeField] private AudioSource winSound;
+    [SerializeField] private AudioSource cheers;
+    [SerializeField] private AudioSource loseSound;
+
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameActive = false;
+        loseSound.Play();
         //zoekt alle enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //vernietigt alle enemies
@@ -65,6 +68,8 @@ public class GameManager : MonoBehaviour
     public void GameWin()
     {
         gameActive = false;
+        cheers.Play();
+        winSound.Play();
         //zoekt alle enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies)
@@ -87,10 +92,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("dsa");
-        player.transform.position = Vector3.zero;
-        
-    }
+
+    //checkt of player out of bounds is
 }

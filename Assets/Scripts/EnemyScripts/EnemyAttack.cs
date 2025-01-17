@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBase") || collision.gameObject.CompareTag("PlayerTower"))
+        if (collision.gameObject.CompareTag("PlayerBase"))
         {
             baseHealth = collision.gameObject.GetComponent<Health>();
         }
@@ -22,11 +22,11 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        //if (collision.gameObject.CompareTag("PlayerBase"))
-        //{
-        //    baseHealth = null;
-        //    //verwijderd de reference als vijand base verlaat
-        //}
+        if (collision.gameObject.CompareTag("PlayerBase"))
+        {
+            baseHealth = null;
+            //verwijderd de reference als vijand base verlaat
+        }
     }
 
     private void Update()
