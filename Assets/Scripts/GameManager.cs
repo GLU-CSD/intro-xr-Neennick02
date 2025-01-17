@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private BoxCollider bounds;
+
     private void Start()
     {
         scoreText.text = "Score: " + score;
@@ -82,5 +85,12 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("dsa");
+        player.transform.position = Vector3.zero;
+        
     }
 }
