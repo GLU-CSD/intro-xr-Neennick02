@@ -1,67 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
-public class TowerAttack : MonoBehaviour
+public class EnemyTowerAttack : MonoBehaviour
 {
     public float fireRate = 1f;
     public GameObject projectilePrefab;
     public Transform firePoint;
-    [SerializeField] Health towerHealth;
 
     private float nextFireTime = 0f;
-    private List<Transform> enemiesInRange = new List<Transform>();
+    private List<Transform> playerTowersInRange = new List<Transform>();
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("PlayerTower"))
         {
-            enemiesInRange.Add(other.transform);
+           playerTowersInRange.Add(other.transform);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy")){
-            enemiesInRange.Remove(other.transform);
+        if (other.CompareTag("PlayerTower"))
+        {
+           playerTowersInRange.Remove(other.transform);
         }
     }
 
     Transform GetClosestEnemy()
     {
-        Transform closestEnemy = null;
+        Transform closestTower = null;
         float shortestDistance = Mathf.Infinity;
 
         //loopt door alle enemies
-        foreach (Transform enemy in enemiesInRange)
+        foreach (Transform tower in playerTowersInRange)
         {
-            //checkt of enemy niet dood is
-            if(enemy != null)
+            //checkt of tower niet dood is
+            if (tower != null)
             {
-                //check afstand tussen toren en enemy
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.position);
-            if(distanceToEnemy < shortestDistance)
+                //check afstand tussen enemytoren en playertower
+                float distanceToEnemy = Vector3.Distance(transform.position, tower.position);
+                if (distanceToEnemy < shortestDistance)
                 {
                     //vindt dichtsbijzijnde enemy
                     shortestDistance = distanceToEnemy;
-                    closestEnemy = enemy;
+                    closestTower = tower;
                 }
-            }else
+            }
+            else
             {
                 //als enemy dood is verwijder game object
-                enemiesInRange.Remove(enemy);
-                closestEnemy = null;
-                return closestEnemy;
+                playerTowersInRange.Remove(tower);
+                closestTower = null;
+                return closestTower;
             }
-            
+
         }
-        return closestEnemy;
+        return closestTower;
     }
 
 
     private void Update()
     {
-        if(Time.time >= nextFireTime)
+        if (Time.time >= nextFireTime)
         {
             Transform target = GetClosestEnemy();
             if (target != null)
@@ -70,20 +70,11 @@ public class TowerAttack : MonoBehaviour
                 nextFireTime = Time.time + 1f / fireRate;
             }
         }
-        DestroyTower();
     }
 
     void Shoot(Transform target)
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         projectile.GetComponent<Projectile>().SetTarget(target);
-    }
-
-    private void DestroyTower()
-    {
-        if(towerHealth.currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }

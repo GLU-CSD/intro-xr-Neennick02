@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     //UI voor game over
     [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject gameWinUI;
 
     private void Start()
     {
@@ -23,9 +24,12 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        scoreTimer += Time.deltaTime;
+        if (gameActive)
+        {
+            scoreTimer += Time.deltaTime;
+        }
 
-        if(scoreTimer >= 1f) //verhoogt elke seconde de score
+        if (scoreTimer >= 1f) //verhoogt elke seconde de score
         {
             score++;
             scoreTimer = 0f;
@@ -36,7 +40,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameActive = false;
-
         //zoekt alle enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //vernietigt alle enemies
@@ -54,6 +57,26 @@ public class GameManager : MonoBehaviour
 
         //Toon Game over screen
         gameOverUI.SetActive(true);
+    }
+
+    public void GameWin()
+    {
+        gameActive = false;
+        //zoekt alle enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        //zoekt/vernietigt spawners
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawners)
+        {
+            Destroy(spawner);
+        }
+
+        gameWinUI.SetActive(true);
     }
 
     public void RestartGame()

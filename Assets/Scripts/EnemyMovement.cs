@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
     private Transform playerTransform;
 
+    private RangeAttribute range;
+
     private void Start()
     {
         // Vind de NavMeshAgent component
@@ -25,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
     {
       if(playerTransform != null)
         {
+            agent.stoppingDistance = 4;
             agent.SetDestination(playerTransform.position);
         }  
     }
