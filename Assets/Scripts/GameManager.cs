@@ -18,13 +18,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject gameWinUI;
 
-    [SerializeField] private AudioSource winSound;
-    [SerializeField] private AudioSource cheers;
-    [SerializeField] private AudioSource loseSound;
 
+    public SoundScript sound;
 
     private void Start()
     {
+        sound = GetComponent<SoundScript>();
         scoreText.text = "Score: " + score;
     }
     private void Update()
@@ -45,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameActive = false;
-        loseSound.Play();
+        sound.PlayLoseSound();
         //zoekt alle enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //vernietigt alle enemies
@@ -68,8 +67,8 @@ public class GameManager : MonoBehaviour
     public void GameWin()
     {
         gameActive = false;
-        cheers.Play();
-        winSound.Play();
+        sound.PlayWinSound();
+        
         //zoekt alle enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies)

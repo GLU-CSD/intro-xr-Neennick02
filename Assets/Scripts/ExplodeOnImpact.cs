@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,12 +9,19 @@ public class ExplodeOnImpact : MonoBehaviour
     public float explosionForce = 500f; //kracht v explosie
     public float explosionRadius = 5f; //radius v explosie
     public float explosionDamage = 10f; //schade v explosie
+    public SoundScript sound;
+    private void Start()
+    {
+        sound = GetComponent<SoundScript>();
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) //zoekt naar object met tag "enemy"
         {
             Explode();
+            sound.PlayExplosionSound();
             //particle effect
             Destroy(gameObject);
         }

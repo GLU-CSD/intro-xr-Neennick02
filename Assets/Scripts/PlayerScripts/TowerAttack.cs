@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -10,8 +11,15 @@ public class TowerAttack : MonoBehaviour
     public Transform firePoint;
     [SerializeField] Health towerHealth;
 
+    public SoundScript sounds;
+
     private float nextFireTime = 0f;
     private List<Transform> enemiesInRange = new List<Transform>();
+
+    private void Start()
+    {
+        sounds = GetComponent<SoundScript>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -77,6 +85,7 @@ public class TowerAttack : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         projectile.GetComponent<Projectile>().SetTarget(target);
+        sounds.PlayExplosionSound();
     }
 
     private void DestroyTower()
