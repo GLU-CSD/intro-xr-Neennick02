@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public float damage = 50f;
     private Transform target;
 
+    public GameObject explosionPrefab;
     public void SetTarget(Transform newTarget)
     {
         //selecteerd een target
@@ -41,6 +42,7 @@ public class Projectile : MonoBehaviour
             //tagetHealth.TakeDamage(10);
             // Gebruik damage variable
             // Instantiate eventuele effecten
+            GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
             target.GetComponent<Health>().TakeDamage(damage);
             if(target.GetComponent<Health>().currentHealth <= 0)
         {

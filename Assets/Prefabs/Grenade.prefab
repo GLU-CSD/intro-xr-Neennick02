@@ -302,3 +302,5 @@ MonoBehaviour:
   explosionForce: 500
   explosionRadius: 5
   explosionDamage: 10
+  sound: {fileID: 0}
+  explosionPrefab: {fileID: 7596963159813324611, guid: 30c0741309f3f9643a6d60e93612e352, type: 3}

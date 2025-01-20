@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 
 public class ExplodeOnImpact : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ExplodeOnImpact : MonoBehaviour
     public float explosionRadius = 5f; //radius v explosie
     public float explosionDamage = 10f; //schade v explosie
     public SoundScript sound;
+
+    public GameObject explosionPrefab;
     private void Start()
     {
         sound = GetComponent<SoundScript>();
@@ -23,6 +26,7 @@ public class ExplodeOnImpact : MonoBehaviour
             Explode();
             sound.PlayExplosionSound();
             //particle effect
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
