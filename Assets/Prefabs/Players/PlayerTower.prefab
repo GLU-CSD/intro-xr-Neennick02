@@ -318,6 +318,14 @@ PrefabInstance:
       propertyPath: towerPrefab
       value: 
       objectReference: {fileID: 1487347033723594232}
+    - target: {fileID: 2870862800722654639, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870862800722654639, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5387907193813652666, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
       propertyPath: m_Name
       value: PlayerTower
@@ -382,7 +390,9 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8025771840101701357, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
+    - {fileID: 2870862800722654639, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5387907193814075546, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
@@ -398,6 +408,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5387907193813652664, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8213160393581988152}
+    - targetCorrespondingSourceObject: {fileID: 5387907193813652664, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7183713045686410501}
   m_SourcePrefab: {fileID: 100100000, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}
 --- !u!1 &1487347033723594232 stripped
 GameObject:
@@ -445,6 +458,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 12
   m_Center: {x: 2.5929997e-16, y: -4.4, z: -0.0000038146973}
+--- !u!114 &7183713045686410501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487347033723594234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c302a262a050984499999b12f0848f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  projectilePrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
+  firePoint: {fileID: 4143487084414781180}
+  towerHealth: {fileID: 2077259028189962459}
+  sounds: {fileID: 0}
 --- !u!4 &1487347033723697624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5387907193814075546, guid: 56fa4cb656b7d044d87115eb57b810f8, type: 3}

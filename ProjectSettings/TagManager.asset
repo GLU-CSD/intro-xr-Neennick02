@@ -10,6 +10,8 @@ TagManager:
   - PlayerBase
   - Spawner
   - PlayerTower
+  - FxTemporaire
+  - EnemyBase
   layers:
   - Default
   - TransparentFX

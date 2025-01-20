@@ -279,7 +279,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 10
+  m_ThrowVelocityScale: 5
   m_ThrowAngularVelocityScale: 5
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
@@ -301,6 +301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 500
   explosionRadius: 5
-  explosionDamage: 10
+  explosionDamage: 25
   sound: {fileID: 0}
   explosionPrefab: {fileID: 7596963159813324611, guid: 30c0741309f3f9643a6d60e93612e352, type: 3}

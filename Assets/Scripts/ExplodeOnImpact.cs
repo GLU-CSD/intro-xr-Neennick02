@@ -24,7 +24,16 @@ public class ExplodeOnImpact : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")) //zoekt naar object met tag "enemy"
         {
             Explode();
-            sound.PlayExplosionSound();
+            if (sound != null)
+            {
+                sound.PlayExplosionSound();
+            }
+            //particle effect
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Terrain"))
+        {
             //particle effect
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
