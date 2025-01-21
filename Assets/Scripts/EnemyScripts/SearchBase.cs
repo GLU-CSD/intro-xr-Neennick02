@@ -42,7 +42,7 @@ public class SearchTower: MonoBehaviour
       else if(towerTransform != null)
         {
             agent.stoppingDistance = 4;
-            agent.SetDestination(playerTransform.position);
+            agent.SetDestination(towerTransform.position);
         }
     }
 }

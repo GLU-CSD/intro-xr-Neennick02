@@ -8,11 +8,10 @@ public class AttackBase : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     [SerializeField] Health towerHealth;
-
     public SoundScript sounds;
 
     private float nextFireTime = 0f;
-    private List<Transform> enemiesInRange = new List<Transform>();
+    private List<Transform> baseInRange = new List<Transform>();
 
     private void Start()
     {
@@ -22,7 +21,7 @@ public class AttackBase : MonoBehaviour
     {
         if (other.CompareTag("EnemyBase"))
         {
-            enemiesInRange.Add(other.transform);
+            baseInRange.Add(other.transform);
         }
     }
 
@@ -30,40 +29,40 @@ public class AttackBase : MonoBehaviour
     {
         if (other.CompareTag("EnemyBase"))
         {
-            enemiesInRange.Remove(other.transform);
+            baseInRange.Remove(other.transform);
         }
     }
 
-    Transform GetClosestEnemy()
+    Transform GetClosestBase()
     {
-        Transform closestEnemy = null;
+        Transform closestBase = null;
         float shortestDistance = Mathf.Infinity;
 
         //loopt door alle enemies
-        foreach (Transform enemy in enemiesInRange)
+        foreach (Transform target in baseInRange)
         {
             //checkt of enemy niet dood is
-            if (enemy != null)
+            if (target != null)
             {
                 //check afstand tussen toren en enemy
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.position);
-                if (distanceToEnemy < shortestDistance)
+                float distanceToBase = Vector3.Distance(transform.position, target.position);
+                if (distanceToBase < shortestDistance)
                 {
                     //vindt dichtsbijzijnde enemy
-                    shortestDistance = distanceToEnemy;
-                    closestEnemy = enemy;
+                    shortestDistance = distanceToBase;
+                    closestBase = target;
                 }
             }
             else
             {
                 //als enemy dood is verwijder game object
-                enemiesInRange.Remove(enemy);
-                closestEnemy = null;
-                return closestEnemy;
+                baseInRange.Remove(target);
+                closestBase = null;
+                return closestBase;
             }
 
         }
-        return closestEnemy;
+        return closestBase;
     }
 
 
@@ -71,8 +70,7 @@ public class AttackBase : MonoBehaviour
     {
         if (Time.time >= nextFireTime)
         {
-            Debug.Log("SDa");
-            Transform target = GetClosestEnemy();
+            Transform target = GetClosestBase();
             if (target != null)
             {
                 Shoot(target);

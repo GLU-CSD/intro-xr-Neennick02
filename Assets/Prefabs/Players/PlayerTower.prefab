@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  projectilePrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
+  projectilePrefab: {fileID: 4771847015437596769, guid: 105ab476916fa184ba1152afecf71a75, type: 3}
   firePoint: {fileID: 4143487084414781180}
   towerHealth: {fileID: 2077259028189962459}
   sounds: {fileID: 0}

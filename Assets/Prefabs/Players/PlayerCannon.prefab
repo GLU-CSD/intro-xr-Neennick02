@@ -454,7 +454,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13.29
+  m_Radius: 10.79
   m_Center: {x: -0.1908884, y: 1.81, z: -0.23181176}
 --- !u!114 &3673065701512451051
 MonoBehaviour:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c302a262a050984499999b12f0848f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 0.5
   projectilePrefab: {fileID: 2669510442598396625, guid: 4ec6638d6035ce543861dba8f63c9f8c, type: 3}
   firePoint: {fileID: 7490013222384461046}
   towerHealth: {fileID: 3673065701512451051}
