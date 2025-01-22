@@ -14,6 +14,8 @@ public class SoundScript : MonoBehaviour
     [SerializeField] private AudioSource[] hurtSounds;
     [SerializeField] private AudioSource[] explosionSounds;
 
+    public AudioClip hurt;
+
     private void Awake()
     {
        
@@ -25,6 +27,8 @@ public class SoundScript : MonoBehaviour
         AudioSource randomHurtSound = hurtSounds[Random.Range(0, hurtSounds.Length)];
         //speelt random audioSource
         randomHurtSound.Play();
+
+        explosionSounds[0].PlayOneShot(hurt);
     }
 
     public void PlayExplosionSound()

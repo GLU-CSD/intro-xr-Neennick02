@@ -56,7 +56,7 @@ public class AttackBase : MonoBehaviour
             else
             {
                 //als enemy dood is verwijder game object
-                baseInRange.Remove(target);
+                //baseInRange.Remove(target);
                 closestBase = null;
                 return closestBase;
             }
