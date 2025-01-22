@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -12,7 +13,12 @@ public class Sword : MonoBehaviour
             {
                 Debug.Log("enemy is hit.");
                 Health health = collision.gameObject.GetComponent<Health>();
-                health.TakeDamage(10);
+                Rigidbody rb = this.GetComponent<Rigidbody>();
+                health.TakeDamage(25);
+                 if(health.currentHealth <= 0)
+                {
+                    Destroy(collision.gameObject);
+                }
             }
         }
     }

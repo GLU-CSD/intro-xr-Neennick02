@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TB_ArcherTower_Lvl4_A
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
