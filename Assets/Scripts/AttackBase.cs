@@ -93,7 +93,7 @@ public class AttackBase : MonoBehaviour
     {
         if (towerHealth != null)
         {
-            if (towerHealth.currentHealth < 0)
+            if (towerHealth.currentHealth <= 0)
             {
                 Destroy(gameObject);
             }

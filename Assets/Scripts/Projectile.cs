@@ -44,12 +44,5 @@ public class Projectile : MonoBehaviour
             // Instantiate eventuele effecten
             GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
             target.GetComponent<Health>().TakeDamage(damage);
-            if(target.GetComponent<Health>().currentHealth <= 0)
-        {
-            Destroy(target.gameObject);
-        }
-            Destroy(gameObject, 1f);
-        
-        
     }
 }

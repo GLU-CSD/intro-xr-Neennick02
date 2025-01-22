@@ -201,6 +201,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 715285101816272036}
+  - component: {fileID: 5534217065419854895}
+  - component: {fileID: 3865962780511929360}
   m_Layer: 0
   m_Name: TowerDestroyer
   m_TagString: Untagged
@@ -226,6 +228,44 @@ Transform:
   - {fileID: 1217664061821052558}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5534217065419854895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605000852834923156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b508bf6b26023419e69db25655a7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  projectilePrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
+  firePoint: {fileID: 1217664061821052558}
+  towerHealth: {fileID: 3895173834238018690}
+  sounds: {fileID: 0}
+--- !u!135 &3865962780511929360
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605000852834923156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 24.95
+  m_Center: {x: -0.00000071525574, y: 6.2781987, z: 0.23793185}
 --- !u!1 &8035757624876846210
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +388,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
+      propertyPath: m_TagString
+      value: PlayerTower
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -398,16 +442,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9110239702918334502}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3449797913565434907}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1343395246585122230}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1451237455021963722}
+      addedObject: {fileID: 3895173834238018690}
   m_SourcePrefab: {fileID: 100100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
 --- !u!4 &7369157357450843353 stripped
 Transform:
@@ -419,42 +457,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
   m_PrefabInstance: {fileID: 7369157357451234905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9110239702918334502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369157357451331833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137cde6c1e0b13941a26b601a74ab4b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthbarFill: {fileID: 685455803225003236}
---- !u!135 &3449797913565434907
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369157357451331833}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 24.95
-  m_Center: {x: -0.00000071525574, y: 6.2781987, z: 0.23793185}
 --- !u!136 &1343395246585122230
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -478,7 +480,7 @@ CapsuleCollider:
   m_Height: 15.9
   m_Direction: 1
   m_Center: {x: -0.00000071525574, y: 2.9, z: 0.23793185}
---- !u!114 &1451237455021963722
+--- !u!114 &3895173834238018690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,9 +489,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7369157357451331833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ef92f6301394d4abd832c11c0d6447, type: 3}
+  m_Script: {fileID: 11500000, guid: 137cde6c1e0b13941a26b601a74ab4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 50
-  explosionPrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
+  maxHealth: 100
+  currentHealth: 0
+  healthbarFill: {fileID: 685455803225003236}
