@@ -26,7 +26,7 @@ public class ExplodeOnImpact : MonoBehaviour
             Explode();
             if (sound != null)
             {
-                sound.PlayExplosionSound();
+                //
             }
             //particle effect
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);

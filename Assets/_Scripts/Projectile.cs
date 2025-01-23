@@ -9,6 +9,16 @@ public class Projectile : MonoBehaviour
     private Transform target;
 
     public GameObject explosionPrefab;
+    //[SerializeField] private SoundScript sounds;
+
+    [SerializeField] private AudioClip[] clips;
+    [SerializeField] private AudioSource source;
+
+    [SerializeField] private HurtSound hurtSound;
+
+    private void Start()
+    {
+    }
     public void SetTarget(Transform newTarget)
     {
         //selecteerd een target
@@ -29,6 +39,7 @@ public class Projectile : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
         {
             Explode();
+            RandomExplosionSound();
             //verwijderd projectile
             Destroy(gameObject);
         }
@@ -36,13 +47,19 @@ public class Projectile : MonoBehaviour
 
     void Explode()
     {
-        // Zoek Health component van target met GetComponent
-        // Als Health script gevonden is, gebruik TakeDamage functie
-     
-            //tagetHealth.TakeDamage(10);
-            // Gebruik damage variable
             // Instantiate eventuele effecten
             GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
+            //explosie geluid
+                //RandomExplosionSound();
+
+
+            //doet damage
             target.GetComponent<Health>().TakeDamage(damage);
+    }
+
+    void RandomExplosionSound()
+    {
+        AudioClip explosionSounds = clips[UnityEngine.Random.Range(0, clips.Length)];
+        source.PlayOneShot(explosionSounds);
     }
 }
