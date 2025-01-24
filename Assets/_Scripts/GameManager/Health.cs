@@ -12,13 +12,15 @@ public class Health : MonoBehaviour
     private Button buttonHeal;
     private Button buttonDamage;
 
+    private AudioSource brickSound;
+
 
     [SerializeField] private HurtSound hurtSound;
 
 
     void Start()
     {
-
+        brickSound = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         UpdateHeathBar();
     }
@@ -34,9 +36,9 @@ public class Health : MonoBehaviour
         {
             hurtSound.RandomHurtSound();
         }
-        else if(this.gameObject.CompareTag("Base") || this.gameObject.CompareTag("EnemyBase") || this.gameObject.CompareTag("PlayerTower"))
+        else if(this.gameObject.CompareTag("PlayerBase") || this.gameObject.CompareTag("EnemyBase") || this.gameObject.CompareTag("PlayerTower"))
         {
-            //nog niets  maar inpactsound
+            brickSound.Play();
         }
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0,maxHealth);
