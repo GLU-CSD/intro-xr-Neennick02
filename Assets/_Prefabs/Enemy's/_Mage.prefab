@@ -272,7 +272,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbarFill: {fileID: 2949346223506780878}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 8287623048314226009}
 --- !u!95 &5151223092677263911
 Animator:
   serializedVersion: 5

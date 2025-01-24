@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         {
             hurtSound.RandomHurtSound();
         }
-        else if(this.gameObject.CompareTag("PlayerBase") || this.gameObject.CompareTag("EnemyBase") || this.gameObject.CompareTag("PlayerTower"))
+        else if(this.gameObject.CompareTag("Base") || this.gameObject.CompareTag("EnemyBase") || this.gameObject.CompareTag("PlayerTower"))
         {
             //nog niets  maar inpactsound
         }

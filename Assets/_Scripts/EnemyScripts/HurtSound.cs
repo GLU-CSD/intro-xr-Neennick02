@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 
@@ -13,6 +14,7 @@ public class HurtSound : MonoBehaviour
 
     private void Awake()
     {
+
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {

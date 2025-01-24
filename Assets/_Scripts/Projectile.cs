@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
 
     public GameObject explosionPrefab;
     [SerializeField] HurtSound explosionSound;
+    private float timer = 0;
     private void Start()
     {
     }
@@ -32,17 +33,21 @@ public class Projectile : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
         {
+            speed = 0f;
+            //geeft explosie geluid uit array
+            explosionSound.RandomProjectileSound();
+            timer += Time.deltaTime / 1000;
             Explode();
-            //verwijderd projectile
-            Destroy(gameObject);
+            if(timer > 1f)
+            {
+                //verwijderd projectile
+                Destroy(gameObject);
+            }
         }
     }
 
     void Explode()
-    {
-        //geeft explosie geluid uit array
-        explosionSound.RandomProjectileSound();
-        Debug.Log("exlosion played");
+    {      
         // Instantiate eventuele effecten
         GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
         //doet damage
