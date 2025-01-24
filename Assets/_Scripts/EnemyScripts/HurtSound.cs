@@ -1,22 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class HurtSound : MonoBehaviour
 {
     [SerializeField] private AudioClip[] hurtSound;
-    private AudioSource enemySource;
+    [SerializeField] private AudioClip[] explosionSound;
+
+    private AudioSource audioSource;
+
+
     private void Awake()
     {
-        enemySource = GetComponent<AudioSource>();
-        if (enemySource == null)
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
         {
-            enemySource = gameObject.AddComponent<AudioSource>();
-            Debug.Log("source added");
+            audioSource = gameObject.AddComponent<AudioSource>();
+            Debug.Log("audio source added to object");
         }
         else
         {
-            Debug.Log("source found");
+            Debug.Log("audio source found on object");
         }
     }
 
@@ -26,7 +31,17 @@ public class HurtSound : MonoBehaviour
         AudioClip clip = hurtSound[UnityEngine.Random.Range(0, hurtSound.Length)];
         Debug.Log($"Selected clip: {clip.name}");
         //speelt clip af op audioSource
-        enemySource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip);
         Debug.Log("sound played");
+    }
+
+    public void RandomProjectileSound()
+    {
+        //assigned een random clip uit de array
+        AudioClip clip = explosionSound[UnityEngine.Random.Range(0, explosionSound.Length)];
+        Debug.Log($"Selected clip: {clip.name}");
+        //speelt clip af op audioSource
+        audioSource.PlayOneShot(clip);
+        Debug.Log("explosion sound played");
     }
 }

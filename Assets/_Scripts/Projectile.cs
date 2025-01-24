@@ -9,13 +9,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
 
     public GameObject explosionPrefab;
-    //[SerializeField] private SoundScript sounds;
-
-    [SerializeField] private AudioClip[] clips;
-    [SerializeField] private AudioSource source;
-
-    [SerializeField] private HurtSound hurtSound;
-
+    [SerializeField] HurtSound explosionSound;
     private void Start()
     {
     }
@@ -39,7 +33,6 @@ public class Projectile : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
         {
             Explode();
-            RandomExplosionSound();
             //verwijderd projectile
             Destroy(gameObject);
         }
@@ -47,19 +40,12 @@ public class Projectile : MonoBehaviour
 
     void Explode()
     {
-            // Instantiate eventuele effecten
-            GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
-            //explosie geluid
-                //RandomExplosionSound();
-
-
-            //doet damage
-            target.GetComponent<Health>().TakeDamage(damage);
-    }
-
-    void RandomExplosionSound()
-    {
-        AudioClip explosionSounds = clips[UnityEngine.Random.Range(0, clips.Length)];
-        source.PlayOneShot(explosionSounds);
+        //geeft explosie geluid uit array
+        explosionSound.RandomProjectileSound();
+        Debug.Log("exlosion played");
+        // Instantiate eventuele effecten
+        GameObject explosion = Instantiate(explosionPrefab, target.position, Quaternion.identity);
+        //doet damage
+        target.GetComponent<Health>().TakeDamage(damage);
     }
 }
