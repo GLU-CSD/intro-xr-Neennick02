@@ -11,6 +11,8 @@ public class HurtSound : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public bool isPlaying;
+
 
     private void Awake()
     {
@@ -24,6 +26,18 @@ public class HurtSound : MonoBehaviour
         else
         {
             Debug.Log("audio source found on object");
+        }
+    }
+
+    private void Update()
+    {
+        if (audioSource.isPlaying)
+        {
+            isPlaying = true;
+        }
+        else
+        {
+            isPlaying = false;
         }
     }
 

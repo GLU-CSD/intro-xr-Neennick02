@@ -8,14 +8,12 @@ public class AttackBase : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     [SerializeField] Health towerHealth;
-    public SoundScript sounds;
 
     private float nextFireTime = 0f;
     private List<Transform> baseInRange = new List<Transform>();
 
     private void Start()
     {
-        sounds = GetComponent<SoundScript>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -56,7 +54,7 @@ public class AttackBase : MonoBehaviour
             else
             {
                 //als enemy dood is verwijder game object
-                //baseInRange.Remove(target);
+                baseInRange.Remove(target);
                 closestBase = null;
                 return closestBase;
             }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4368796784181929282}
   - component: {fileID: 5847102522579523108}
   - component: {fileID: 3551519542055227967}
-  - component: {fileID: 101861154069019367}
+  - component: {fileID: 5505857839752059033}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -170,7 +170,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 88e5f92813c487a408cdb8debffdba5f, type: 3}
   - {fileID: 8300000, guid: 63b832941882a1c4b83f287618cf2516, type: 3}
   - {fileID: 8300000, guid: 410788eac7286634cab2844116f4f6cf, type: 3}
---- !u!82 &101861154069019367
+  isPlaying: 0
+--- !u!82 &5505857839752059033
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +227,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
