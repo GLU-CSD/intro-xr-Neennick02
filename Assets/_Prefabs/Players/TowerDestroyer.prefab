@@ -244,7 +244,7 @@ MonoBehaviour:
   fireRate: 1
   projectilePrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
   firePoint: {fileID: 1217664061821052558}
-  towerHealth: {fileID: 0}
+  towerHealth: {fileID: 866072313217721977}
 --- !u!135 &3865962780511929360
 SphereCollider:
   m_ObjectHideFlags: 0

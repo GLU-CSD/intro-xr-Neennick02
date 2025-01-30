@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4108145952648319061}
   - component: {fileID: 4368796784181929282}
   - component: {fileID: 5847102522579523108}
-  - component: {fileID: 1055396288363177038}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -151,25 +150,7 @@ MonoBehaviour:
   speed: 15
   damage: 80
   explosionPrefab: {fileID: 5417314758937312232, guid: 8c08a274240c05a43815f4d07c7216a2, type: 3}
-  explosionSound: {fileID: 1055396288363177038}
---- !u!114 &1055396288363177038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2669510442598396625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2212885269d193f4297570433cb2ed1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtSound: []
-  explosionSound:
-  - {fileID: 8300000, guid: 27ba0fca878cb06409a151555d9f945e, type: 3}
-  - {fileID: 8300000, guid: 63b832941882a1c4b83f287618cf2516, type: 3}
-  - {fileID: 8300000, guid: 410788eac7286634cab2844116f4f6cf, type: 3}
-  - {fileID: 8300000, guid: 88e5f92813c487a408cdb8debffdba5f, type: 3}
+  explosionAudioPrefab: {fileID: 1146561161402131457, guid: 7a30539d9d8f74449b1503addff8fc3f, type: 3}
 --- !u!1001 &5432593463298950262
 PrefabInstance:
   m_ObjectHideFlags: 0

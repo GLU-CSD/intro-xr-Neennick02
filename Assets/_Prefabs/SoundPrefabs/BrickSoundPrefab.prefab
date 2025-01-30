@@ -143,3 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickSounds:
   - {fileID: 8300000, guid: 9c86d934f78ec2f429221083aadba2e0, type: 3}
+  - {fileID: 8300000, guid: e6ef371dd5620ea4c8f1afb4acf4eb0f, type: 3}
+  - {fileID: 8300000, guid: fc6f5106df900bd45a1517c8fd9df84e, type: 3}
+  - {fileID: 8300000, guid: 2f1aace3299b944479256ae4b6056166, type: 3}
+  - {fileID: 8300000, guid: 10fb28338f226cc4fb4eafdffabf3b04, type: 3}
+  - {fileID: 8300000, guid: bd5a528edb0a32d4e8d197455b38eda4, type: 3}
+  - {fileID: 8300000, guid: 85befc49d9e8cfe4bbc99839af2f8462, type: 3}
+  - {fileID: 8300000, guid: e267300968a861643bb5ed0a372466e5, type: 3}

@@ -283,9 +283,7 @@ GameObject:
   - component: {fileID: 5918289979998194383}
   - component: {fileID: 6993934311864295057}
   - component: {fileID: 1648757382677318612}
-  - component: {fileID: 1898253440274173366}
   - component: {fileID: 1097102820288239546}
-  - component: {fileID: 544074230956469856}
   m_Layer: 0
   m_Name: _Soldier
   m_TagString: Enemy
@@ -348,7 +346,9 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbarFill: {fileID: 5388839478060910201}
-  hurtSound: {fileID: 544074230956469856}
+  spawnPosition: {fileID: 9189009604848170350}
+  hurtSoundPrefab: {fileID: 7142756356423022912, guid: 6ed8b40adb44f244385cf5d66f76fe68, type: 3}
+  brickSoundPrefab: {fileID: 0}
 --- !u!95 &8390161283046436145
 Animator:
   serializedVersion: 5
@@ -445,102 +445,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &1898253440274173366
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9035823997358574158}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1097102820288239546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,31 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 6746626185332939071}
---- !u!114 &544074230956469856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9035823997358574158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2212885269d193f4297570433cb2ed1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtSound:
-  - {fileID: 8300000, guid: 4aa2c68d424042b42a8a1797edad0770, type: 3}
-  - {fileID: 8300000, guid: fb55a7ba771c0e44ab5ffb72f5dc59cf, type: 3}
-  - {fileID: 8300000, guid: f7797ef9d3b34b84b9f959e94af5f3ca, type: 3}
-  - {fileID: 8300000, guid: 8f48fe2b4bcf295448e4387befd11f9d, type: 3}
-  - {fileID: 8300000, guid: 807e5945d4f0f1a4b9ea33f286536002, type: 3}
-  - {fileID: 8300000, guid: 1ae0a863418f8e74eb42d5118902d538, type: 3}
-  - {fileID: 8300000, guid: 9cb44931fd59101409706c886c83442a, type: 3}
-  - {fileID: 8300000, guid: a83fa0a1ae26c9f4595e4368f5855780, type: 3}
-  - {fileID: 8300000, guid: 83d0bb92d26b3504087b001ef7055b3f, type: 3}
-  - {fileID: 8300000, guid: 11ae05d0d9b76754e9cc31b89ae50465, type: 3}
-  - {fileID: 8300000, guid: 24f6724ecbd1e4a4390e9803c213300d, type: 3}
-  explosionSound: []
 --- !u!1001 &1673370648278659960
 PrefabInstance:
   m_ObjectHideFlags: 0
