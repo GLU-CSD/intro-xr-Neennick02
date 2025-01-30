@@ -82,9 +82,7 @@ public class AttackBase : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         projectile.GetComponent<Projectile>().SetTarget(target);
-        //sounds.PlayExplosionSound();
-        //
-        //
+
     }
 
     private void DestroyTower()
