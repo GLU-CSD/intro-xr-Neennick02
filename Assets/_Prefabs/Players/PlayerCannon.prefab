@@ -471,6 +471,9 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbarFill: {fileID: 9050792159380355851}
+  spawnPosition: {fileID: 2605993211160010551}
+  hurtSoundPrefab: {fileID: 0}
+  brickSoundPrefab: {fileID: 669178009785567177, guid: b710327adac75d548916cab3871068a0, type: 3}
 --- !u!114 &800147118944092548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +490,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2669510442598396625, guid: 4ec6638d6035ce543861dba8f63c9f8c, type: 3}
   firePoint: {fileID: 7490013222384461046}
   towerHealth: {fileID: 3673065701512451051}
-  sounds: {fileID: 0}
 --- !u!4 &2605993211160010551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3346c063edaff46aa85906832bbdc728, type: 3}

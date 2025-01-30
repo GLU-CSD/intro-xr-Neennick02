@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Health : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class Health : MonoBehaviour
 
     private AudioSource brickSound;
 
-
-    [SerializeField] private HurtSound hurtSound;
-
+    [SerializeField] Transform spawnPosition;
+    [SerializeField] private GameObject hurtSoundPrefab;
+    [SerializeField] private GameObject brickSoundPrefab;
+ 
 
     void Start()
     {
@@ -34,11 +36,17 @@ public class Health : MonoBehaviour
         //als dit gameobject een enemy is maakt dan geluid bij damage
         if (this.gameObject.CompareTag("Enemy"))
         {
-            hurtSound.RandomHurtSound();
+            if(hurtSoundPrefab != null)//checkt of er een prefab aan het gameobject gekoppeld is
+            {
+                Instantiate(hurtSoundPrefab, spawnPosition.position, spawnPosition.rotation);
+            }
         }
         else if(this.gameObject.CompareTag("PlayerBase") || this.gameObject.CompareTag("EnemyBase") || this.gameObject.CompareTag("PlayerTower"))
         {
-            brickSound.Play();
+            if(brickSoundPrefab != null)//checkt of er een prefab aan het gameobject gekoppeld is
+            {
+                Instantiate(brickSoundPrefab, spawnPosition.position, spawnPosition.rotation);
+            }
         }
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0,maxHealth);

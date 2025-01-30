@@ -159,6 +159,9 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbarFill: {fileID: 0}
+  spawnPosition: {fileID: 7185339917458103194}
+  hurtSoundPrefab: {fileID: 0}
+  brickSoundPrefab: {fileID: 669178009785567177, guid: b710327adac75d548916cab3871068a0, type: 3}
 --- !u!65 &8186306854538468131
 BoxCollider:
   m_ObjectHideFlags: 0

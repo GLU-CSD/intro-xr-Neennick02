@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -10,7 +11,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
 
     public GameObject explosionPrefab;
-    [SerializeField] HurtSound explosionSound;
+    public GameObject explosionAudioPrefab; 
     private void Start()
     {
     }
@@ -33,10 +34,9 @@ public class Projectile : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
         {
-            //geeft explosie geluid uit array
-            explosionSound.RandomProjectileSound();
+            GameObject explosionSound = Instantiate(explosionAudioPrefab, target.position, Quaternion.identity);
             Explode();
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject);
         }
     }
 

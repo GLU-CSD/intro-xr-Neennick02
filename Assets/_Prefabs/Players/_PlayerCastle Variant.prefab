@@ -56,8 +56,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8836955987244420398, guid: 29f21f1c0fda16849aef60b2bbc156ff, type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 9219095212927342400}
+    - target: {fileID: 8836955987244420398, guid: 29f21f1c0fda16849aef60b2bbc156ff, type: 3}
+      propertyPath: brickSoundPrefab
+      value: 
+      objectReference: {fileID: 669178009785567177, guid: b710327adac75d548916cab3871068a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f21f1c0fda16849aef60b2bbc156ff, type: 3}
+--- !u!4 &9219095212927342400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7185339917458103194, guid: 29f21f1c0fda16849aef60b2bbc156ff, type: 3}
+  m_PrefabInstance: {fileID: 2037802782807788762}
+  m_PrefabAsset: {fileID: 0}

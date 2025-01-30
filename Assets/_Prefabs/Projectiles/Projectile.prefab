@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4108145952648319061}
   - component: {fileID: 4368796784181929282}
   - component: {fileID: 5847102522579523108}
-  - component: {fileID: 3551519542055227967}
   - component: {fileID: 5505857839752059033}
   m_Layer: 0
   m_Name: Projectile
@@ -152,25 +151,7 @@ MonoBehaviour:
   speed: 30
   damage: 25
   explosionPrefab: {fileID: 4644027607668827336, guid: 78c8e090e6e18a74486764d815fd8002, type: 3}
-  explosionSound: {fileID: 3551519542055227967}
---- !u!114 &3551519542055227967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2669510442598396625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2212885269d193f4297570433cb2ed1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtSound: []
-  explosionSound:
-  - {fileID: 8300000, guid: 88e5f92813c487a408cdb8debffdba5f, type: 3}
-  - {fileID: 8300000, guid: 63b832941882a1c4b83f287618cf2516, type: 3}
-  - {fileID: 8300000, guid: 410788eac7286634cab2844116f4f6cf, type: 3}
-  isPlaying: 0
+  explosionAudioPrefab: {fileID: 1146561161402131457, guid: 7a30539d9d8f74449b1503addff8fc3f, type: 3}
 --- !u!82 &5505857839752059033
 AudioSource:
   m_ObjectHideFlags: 0

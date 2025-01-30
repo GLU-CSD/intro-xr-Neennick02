@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 715285101816272036}
   - component: {fileID: 5534217065419854895}
   - component: {fileID: 3865962780511929360}
+  - component: {fileID: 866072313217721977}
   m_Layer: 0
   m_Name: TowerDestroyer
   m_TagString: PlayerTower
@@ -243,8 +244,7 @@ MonoBehaviour:
   fireRate: 1
   projectilePrefab: {fileID: 2669510442598396625, guid: 7147f5e8818c1654b8761336008b6782, type: 3}
   firePoint: {fileID: 1217664061821052558}
-  towerHealth: {fileID: 3895173834238018690}
-  sounds: {fileID: 0}
+  towerHealth: {fileID: 0}
 --- !u!135 &3865962780511929360
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -266,6 +266,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 24.95
   m_Center: {x: -0.00000071525574, y: 6.2781987, z: 0.23793185}
+--- !u!114 &866072313217721977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605000852834923156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137cde6c1e0b13941a26b601a74ab4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthbarFill: {fileID: 685455803225003236}
+  spawnPosition: {fileID: 7369157357450843353}
+  hurtSoundPrefab: {fileID: 0}
+  brickSoundPrefab: {fileID: 669178009785567177, guid: b710327adac75d548916cab3871068a0, type: 3}
 --- !u!1 &8035757624876846210
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,9 +461,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343395246585122230}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3895173834238018690}
   m_SourcePrefab: {fileID: 100100000, guid: 528711f9e1d1c439184e6c01ee3e3869, type: 3}
 --- !u!4 &7369157357450843353 stripped
 Transform:
@@ -480,19 +495,3 @@ CapsuleCollider:
   m_Height: 15.9
   m_Direction: 1
   m_Center: {x: -0.00000071525574, y: 2.9, z: 0.23793185}
---- !u!114 &3895173834238018690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369157357451331833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137cde6c1e0b13941a26b601a74ab4b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthbarFill: {fileID: 685455803225003236}
-  hurtSound: {fileID: 0}

@@ -1,54 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
-public class HurtSound : MonoBehaviour
+public class RandomExplosionSound: MonoBehaviour
 {
-    [SerializeField] private AudioClip[] hurtSound;
     [SerializeField] private AudioClip[] explosionSound;
 
     private AudioSource audioSource;
 
-    public bool isPlaying;
+    private float destroytimer = 0f;
 
 
     private void Awake()
     {
-
+        //checkt of er een AudioSource GameObject is
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
-            Debug.Log("audio source added to object");
+            Debug.Log("explosionAudio source added to prefab");
         }
         else
         {
-            Debug.Log("audio source found on object");
+            Debug.Log("explosionAudio source found on prefab");
         }
+        RandomProjectileSound();
     }
 
     private void Update()
     {
-        if (audioSource.isPlaying)
+        //zorgt dat gameobject zichzelf destroyd
+        destroytimer += Time.deltaTime;
+        if (destroytimer > 10f)
         {
-            isPlaying = true;
+            Destroy(gameObject);
         }
-        else
-        {
-            isPlaying = false;
-        }
-    }
-
-    public void RandomHurtSound()
-    {
-        //assigned een random clip uit de array
-        AudioClip clip = hurtSound[UnityEngine.Random.Range(0, hurtSound.Length)];
-        Debug.Log($"Selected clip: {clip.name}");
-        //speelt clip af op audioSource
-        audioSource.PlayOneShot(clip);
-        Debug.Log("sound played");
     }
 
     public void RandomProjectileSound()
@@ -59,5 +45,6 @@ public class HurtSound : MonoBehaviour
         //speelt clip af op audioSource
         audioSource.PlayOneShot(clip);
         Debug.Log("explosion sound played");
+
     }
 }
